@@ -1,10 +1,46 @@
 <div>
- <div>
-   <%= link_to "Ruby learning journal", root_path %>
+<div>
+<nav class="navbar navbar-dark bg-dark">
+  <div class="navbar-brand" >
+    <%= link_to "Bid Tracker Portal", root_path, {class: "text-white"} %>
+  </div>
+  <div class="navbar-brand" style="color: white;">
+  
+    <%= link_to "New Bid", new_entry_path, {class: "text-white"} %>
+  </div>
 
-   <div class="navbar-link">
-     <%= link_to "New Entry", new_entry_path %>
-   </div>
+  <% if user_signed_in? %>
+
+    <div class="navbar-brand" style="color: white;">
+    <%= link_to "Edit Profile", edit_user_registration_path %>
+    </div>
+
+    <div class="navbar-brand" style="color: white;">
+    <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+    </div>
+
+    <% else %>
+      <div class="navbar-brand" style="color: white;">
+        <%= link_to "Sign In", new_user_session_path, {class: "text-white"}  %>
+      </div>
+
+      <div class="navbar-brand" style="color: white;">
+        <%= link_to "Sign Up", new_user_registration_path , {class: "text-white"}  %>
+      </div>
+    <% end %>
+  
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button> <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+    </ul>
+    <form class="input-group">
+      <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+   
 
  </div>
 </div>

@@ -14,3 +14,15 @@
  *= require_self
  */
 @import "bootstrap";
+
+a {
+  text-decoration: none;
+}
+
+.navbar-brand a {
+  color: black;
+}
+
+// @import "themes/dark/amber/mdDateTimePicker";
+
+

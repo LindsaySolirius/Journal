@@ -1,10 +1,12 @@
 <div class="container my-3">
 <h1>Bid Opportunities</h1>
 <%= form_with(model: @entry) do |form| %>
+
 <div class="my-3">
   <%= form.label :title, {class: "form-label"} %>
   <%= form.text_field :title, {class: "form-control"}%>
 </div>
+
 <div class="my-3">
   <%= form.label :link %>
   <%= form.text_field :link, {class: "form-control"} %>
@@ -19,12 +21,12 @@
 </div>
 
 <div class="my-3">
-  <%= form.label :status , {class: "form-label"}%>
+  <%= form.label :status, {class: "form-label"} %>
   <%= form.select :status, @status_list, {class: "form-control"}%>
 </div>
 
 <div>
-  <%= form.submit "Add Bid", {class: "btn btn-primary my-3"} %>
+  <%= form.submit "Update Bid", {class: "btn btn-success my-3"} %>
 </div>
 
 <div>

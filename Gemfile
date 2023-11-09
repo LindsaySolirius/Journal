@@ -26,6 +26,8 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+gem "devise", '~> 4.7', '>= 4.7.3'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
@@ -67,3 +69,7 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+
+# gem 'md-date-time-picker-rails', '~> 2.1', '>= 2.1.2'
+# gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true

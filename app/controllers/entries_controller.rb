@@ -5,6 +5,7 @@ class EntriesController < ApplicationController
 
   def new
     @entry = Entry.new()
+    @status_list = ["No Bid", "Live Bid","Closed Lost","Closed Won","Future Oppportunity","Awaiting Decision"]
   end
 
   def create
@@ -21,9 +22,23 @@ def destroy
   redirect_to root_url
 end
 
+def edit
+  @entry = Entry.find(params[:id])
+  @status_list = ["No Bid", "Live Bid","Closed Lost","Closed Won","Future Oppportunity","Awaiting Decision"]
+end
+
+def update 
+  @entry = Entry.find(params[:id])
+        if @entry.update(entry_params)
+            redirect_to root_url
+        end
+end 
+
 private
 
 def entry_params
-    params.require(:entry).permit(:name,:link)
+    params.require(:entry).permit(:title,:link,:budget,:deadline, :status)
   end
 end
+
+
